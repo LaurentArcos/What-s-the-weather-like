@@ -9,22 +9,21 @@ function MeteoResults({ meteo }) {
   return (
     <div>
       <MessageBar meteo={meteo} />
-      <Card centered className="card">
+      <Card sx={{ minWidth: 300, display: 'inline-block' }} className="card">
         <CardMedia
-          src={meteo.current.weather_icons}
-          wrapped
-          ui={false}
+          component="img"
+          image={meteo.current.weather_icons}
           alt="Meteo image"
         />
         <CardContent>
-          <Typography className="city-name">
+          <Typography sx={{ fontSize: 30, textTransform: 'uppercase'}}>
             {meteo.location.name}
           </Typography>
-          <Typography>({meteo.location.region}, {meteo.location.country})</Typography>
-          <Typography className="temperature">
+          <Typography sx={{ fontSize: 15 }} color="text.secondary">({meteo.location.region}, {meteo.location.country})</Typography>
+          <Typography sx={{ fontSize: 35 }} >
             {meteo.current.temperature}°c
           </Typography>
-          <Typography className="weather-description">
+          <Typography sx={{ fontSize: 20 }}>
             {meteo.current.weather_descriptions}
           </Typography>
         </CardContent>
@@ -39,6 +38,7 @@ MeteoResults.propTypes = {
   meteo: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array,
+    PropTypes.string,
   ]).isRequired,
 };
 

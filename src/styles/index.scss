@@ -2,17 +2,59 @@
 @use 'vars';
 
 body {
-  font-family: sans-serif;
+  background-color:rgb(233, 251, 255);
 }
 
-/* 
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
+.app {
+  width: 30vw;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.searchbar {
+  margin: 2rem;
   }
 
-  body {
-    font-family: 'Roboto', sans-serif;
+.message {
+  font-size: 1.5rem;
+  padding: 2rem;
+  width: 30vw;
+}
+
+
+/**===========================================*/
+/**               Media Queries               */
+/**===========================================*/
+
+/** width 760px max */
+@media screen and (max-width: 760px) {
+  .app {
+    width: 80vw;
   }
-*/
+  
+  img {
+    width: 80vw;
+  }
+
+  .message {
+    font-size: 1.4rem;
+    width: 80vw;
+  }
+
+}
+
+/** width 761px --> 1400px */
+@media screen and (min-width: 761px) and (max-width: 1400px) {
+  .app {
+    width: 50vw;
+  }
+  
+  img {
+    width: 50vw;
+  }
+
+  .message {
+    padding: 2rem;
+    width: 50vw;
+  }
+}

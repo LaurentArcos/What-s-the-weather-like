@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function MessageBar({ meteo }) {
   return (
-    <div>
+    <div className='message'>
       Currently the weather in {meteo.location.name} ({meteo.location.country}) is :
     </div>
   );
